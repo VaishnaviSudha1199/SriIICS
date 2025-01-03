@@ -116,5 +116,5 @@ return $connection/UserName</expression>
       <types1:GUID>lCyebmhhk2Pk95Ljm07ZEb</types1:GUID>
       <types1:DisplayName>pTestRestV2Connection-1</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2025-01-03T13:23:33.503Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2025-01-03T13:37:23.685Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
