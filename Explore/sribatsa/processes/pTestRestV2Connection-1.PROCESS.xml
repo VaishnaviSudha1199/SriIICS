@@ -1,0 +1,120 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>22Cv2jop81V4Ady-gt-7535380-2025-01-03T13:22:38.865Z::pd.xml</types1:EntryId>
+      <types1:Name>pTestRestV2Connection-1</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>gitbranch1</types1:CreatedBy>
+      <types1:CreationDate>2025-01-03T13:22:39Z</types1:CreationDate>
+      <types1:ModifiedBy>gitbranch1</types1:ModifiedBy>
+      <types1:ModificationDate>2025-01-03T13:22:56Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  GUID="lCyebmhhk2Pk95Ljm07ZEb"
+                  displayName="pTestRestV2Connection-1"
+                  name="pTestRestV2Connection-1"
+                  overrideAPIName="true"
+                  processNamespace="urn:screenflow:process:">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <output>
+               <field description="" name="username" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="name" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="Response" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:$any</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyStringAsNull">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">true</nvpair>
+               <nvpair name="treatEmptyObjectListAsNotArray">false</nvpair>
+            </extData>
+            <flow id="of6c68c6c-fbd6-4bbc-8156-9cc3351e9bbe">
+               <start id="b40da4ef1-c672-4ba2-bec7-8ac2c520f441">
+                  <link id="q007fff2b-0a81-466f-bed0-76f52d12ad99"
+                        targetId="a1lCyebmhhk2Pk95Ljm07ZEb-lu9tdd7g"/>
+               </start>
+               <service id="a1lCyebmhhk2Pk95Ljm07ZEb-lu9tdd7g">
+                  <title>Login</title>
+                  <serviceName>apTestRestV2:Login</serviceName>
+                  <serviceGUID>g2jOh75xQUjkWzjDBkWI0v</serviceGUID>
+                  <link id="o4b30e0e5-7a25-41ff-8536-0655d3356522"
+                        targetId="a1lCyebmhhk2Pk95Ljm07ZEb-lu9tdd74"/>
+               </service>
+               <service id="a1lCyebmhhk2Pk95Ljm07ZEb-lu9tdd74">
+                  <title>Get Connection</title>
+                  <serviceName>apTestRestV2:Get Connection</serviceName>
+                  <serviceGUID>g2jOh75xQUjkWzjDBkWI0v</serviceGUID>
+                  <serviceInput>
+                     <parameter name="icsSessionUrl" source="field">output.ICS Server URL</parameter>
+                     <parameter name="icSessionId" source="field">output.ICS Session ID</parameter>
+                     <parameter name="connectionId" source="constant">018Z0B0B00000000000N</parameter>
+                  </serviceInput>
+                  <link id="gc370d17d-93d4-4c81-9393-7f929d7d57b4"
+                        targetId="a1lCyebmhhk2Pk95Ljm07ZEb-lu9tdd7w"/>
+               </service>
+               <assignment id="a1lCyebmhhk2Pk95Ljm07ZEb-lu9tdd7w">
+                  <title>Assignment to username, name etc.</title>
+                  <operation source="field" to="output.username">output.Connection[1]/Username</operation>
+                  <operation source="field" to="output.name">output.Connection[1]/Name</operation>
+                  <operation source="formula" to="output.Response">
+                     <expression language="XQuery">let $connection := $output.Connection 
+
+return $connection/UserName</expression>
+                  </operation>
+                  <link id="i7d26eba3-5578-4660-8cd7-959af07b6627"
+                        targetId="a1lCyebmhhk2Pk95Ljm07ZEb-c"/>
+               </assignment>
+               <end id="a1lCyebmhhk2Pk95Ljm07ZEb-c">
+                  <title>End</title>
+               </end>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>5c859ce3-615e-4fcc-9a16-a59a658df02b</ns1:Id>
+               <ns1:Name>test</ns1:Name>
+               <ns1:CreatedBy>gitbranch1</ns1:CreatedBy>
+               <ns1:CreationDate>2025-01-03T13:22:39Z</ns1:CreationDate>
+               <ns1:ModifiedBy>gitbranch1</ns1:ModifiedBy>
+               <ns1:ModificationDate>2025-01-03T13:22:39Z</ns1:ModificationDate>
+               <ns1:Data format="json">{}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>lCyebmhhk2Pk95Ljm07ZEb</types1:GUID>
+      <types1:DisplayName>pTestRestV2Connection-1</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-01-03T13:23:33.503Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
