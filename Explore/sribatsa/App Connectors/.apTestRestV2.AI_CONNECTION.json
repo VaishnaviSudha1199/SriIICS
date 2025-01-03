@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "g2jOh75xQUjkWzjDBkWI0v",
+    "name" : "apTestRestV2",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "qRQciSrZMSPfXBi-gt-7557641-2025-01-03T13:08:06.258Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-01-03T13:17:13.094Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

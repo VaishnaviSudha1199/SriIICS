@@ -1,0 +1,25 @@
+{
+  "objectInfo" : {
+    "id" : "f1LC9QYEUeAfvQwtNwJG8i",
+    "name" : "App Connectors",
+    "type" : "Folder",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Common Folder that holds Application Connectors that can be used within the applications ",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2025-01-03T13:17:13.094Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
